@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Staistics of all Reports in all year  -->
+  <section class="text-gray-600 body-font">
+  
+  
+
+    
+      <div class="container px-5 py-24 mx-auto">
+    
+        <div class="flex flex-wrap -m-4 text-center">
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{total_events}}</h2>
+            <p class="leading-relaxed">Total Events</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{total_income}}</h2>
+            <p class="leading-relaxed">Total Income</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{total_expenditure}}</h2>
+            <p class="leading-relaxed">Total Expenditure</p>
+          </div>
+          <div class="p-4 sm:w-1/4 w-1/2">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{profit_gross}}</h2>
+            <p class="leading-relaxed">Profit Gross</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!--  End of Staistics of all Reports in all year  -->
+
+    <section class="text-gray-600 body-font border">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Year Wise Report</h1><br>
+
+          <form action="#result" method="POST">
+            {% csrf_token %}
+          <label for="yearselect" class="m-3">Select Year</label>
+          <select name="year" id="yearselect">
+            {% for each_year in years %}
+            <option value="{{each_year}}">{{each_year}}</option>
+            {% endfor %}
+          
+          </select><br>
+          <input type="submit" class="m-3">
+
+        </form>
+          
+          
+          
+        {% if request.method == 'POST' %}
+          
+          
+         
+          <h1 id='result' class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">{{year}} - Complete Report</h1>
+        </div>
+        <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+          <table class="table-auto w-full text-left whitespace-no-wrap">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Month</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Total Income</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Total Expenditure</th>
+                <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Total Gross</th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for each_object in object %}
+           
+             
+              <tr>
+                
+                    
+                 
+               
+                <td class="border-t-2 border-gray-200 px-4 py-3">{{each_object.month_name}}</td>
+               
+                <td class="border-t-2 border-gray-200 px-4 py-3">{{each_object.total_income}}</td>
+                <td class="border-t-2 border-gray-200 px-4 py-3">{{each_object.total_expenditure}}</td>
+                <td class="border-t-2 border-gray-200 px-4 py-3 text-lg text-gray-900"><b>{{each_object.total_gross}}</b>
+                </td>
+
+              </tr>
+            
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% endif %} 
+
+
+
+
+        <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
+          <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href="/ledger/">View Ledger
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Dashboard</button>
+        </div>
+
+        {% for each  in allyearsss %}
+          {{each}}
+        {% endfor %}
+        
+
+      </div>
+    </section>
+
+
+
+
+
+</body>
+</html>

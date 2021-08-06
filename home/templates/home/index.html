@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Crystal Plaza</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp - v2.2.1
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <style>
+    .cp-bg {
+      background: url('{% static "assets/img/cp-bg.jpg" %}') top center;
+
+      width: 100%;
+      height: 100vh;
+
+      background-size: cover;
+      position: relative;
+    }
+  </style>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Crystal Plaza</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Check Date Availability</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="#testimonials" class="get-started-btn scrollto">Check Date Availability</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="cp-bg d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Crystal Plaza Auditorium</h1>
+          <h2>Melangadi, Kalpakancherry PO, Malappuram District, Kerala, India</h2>
+        </div>
+      </div>
+
+      <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="material-icons" style="font-size:36px">location_city</i>
+            <h3><a href="">About</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 ">
+          <div class="icon-box">
+            <i class="material-icons" style="font-size:36px">contact_phone</i>
+            <h3><a href="">Contact Us</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line"></i>
+            <h3><a href="">Services</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
+          <div class="icon-box">
+            <i class="material-icons" style="font-size:36px">description</i>
+            <h3><a href="">Features</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line"></i>
+
+            <h3><a href="">Check Availability</a></h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img
+              src="https://content3.jdmagicbox.com/comp/malappuram/s5/9999px483.x483.180128120505.h7s5/catalogue/crystal-plaza-kalpakancheri-malappuram-9aczw.jpg"
+              class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3 class="text-center">About</h3>
+            <p class="font-italic">
+
+              The Managing Directors, Mr. Mohamed Pullisseri and Anwar Sadath Mundekkat had a strong ambition to start
+              an Auditorium with all ultra modern facilities. Their dream comes true on December 2017 by the
+              establishment of Crystal Plaza Auditorium at Melangadi, Kalpakancherry with facilities like A/C, 24 Hr
+              Circuit camera, modern kitchen, spacious dining hall and auditorium, ample carparking facility, etc. This
+              is the first auditorium with such modern facilities at Kalpakancherry.
+              The Crystal Plaza is one of the largest and finest Auditoriums in Malappuram District providing over 400+
+              seats and spacious car parking.The Crystal Plaza Auditorium provides not only its facilities and
+              equipments to clients, but expert service as well. It has a conference centre with a capacity for 404
+              people. In addition, there are parking spaces avaiable.
+
+              Crystal Plaza amenities include rooms, car parking, etc. Our Party hall is a perfect place for celebrating
+              your auspicious family functions and any type of functions such as Birthday party, Wedding Reception,
+              Conferences, Get-together Partie, Office Parties, etc,. It is also an apt place for conducting Corporate
+              Meetings, Seminars. Our charges are very reasonable and competitive.
+
+              Crystal Plaza offers you unparalleled and supreme facilities. Stunning exteriors, mind blowing interiors
+              which are well build, beautiful seating arrangements for more than 800 persons in two levels and 24 hours
+              power supply makes Crystal Plaza Auditorium unique.
+              We are the most prestigious Auditorium of Malappuram District. The 404 seater Auditorium with A/C has been
+              a host to many Programs like Marriages, Get-together, Meetings, Orientation Classes.. The Auditorium
+              building is an elegant structure with aesthetically designed Public Areas, Main Hall, Green Rooms, etc.
+
+            </p>
+            <p class="font-italic"> The Auditorium is strategically located in the Melangadi area of Kalpakancherry. The
+              Auditorium is well connected by Bus services as well as the Tirur Railway Station which has its station
+              just 20 7km distance from the Hall.
+
+
+              The Auditorium has one of the finest stages in the City of with a width of 15 meters and a depth of 7
+              meters. The Auditorium stage is ideal for demanding theatrical performances. To enable quick change of
+              scenes and sets as well as elaborate lighting design.
+
+
+              The Auditorium has excellent acoustics.
+
+
+              The Auditorium has a 24 hour costomer care service system to handle customer queries. In order to enhance
+              security, the Auditorium has an elaborate CCTV System.
+
+
+              The Auditorium is proud to be considered as one of the finest Halls in Kerala for presentation of
+              prestigious Events.</p>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="image col-lg-6" style='background-image: url("{% static 'assets/img/cp2.jpg' %}");'
+            data-aos="fade-right"></div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+            {% for service in services %}
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>{{service.title}}</h4>
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- =======  Features Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Check our Features</p>
+        </div>
+
+        <div class="row">
+
+          {% for feature in features %}
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="{{feature.icon_class}}"></i></div>
+              <h4><a href="">{{feature.title}}</a></h4>
+              <p>{{feature.description}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>Call <i class="fas fa-phone-alt"></i></h3>
+          <a class="cta-btn" href="+919961223331">Call: 9961223331</a>
+          <a class="cta-btn" href="+918891223331">Call: 8891223331</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Check our Portfolio</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+          {% for each_pic in img %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{each_pic.img.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h6>{{each_pic.id}}</h6>
+
+                <div class="portfolio-links">
+                  <a href="{{each_pic.img.url}}" data-gall="portfolioGallery" class="venobox" title="App 1"><i
+                      class="fas fa-expand"></i></a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Counts Section ======= -->
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="owl-carousel testimonials-carousel">
+
+          <div class="testimonial-item">
+
+                          <h3>Check Date Availability</h3>
+              <div class="row">
+                <div class="col-12" >
+                <form action="#testimonials" class="text-dark" method="POST">
+                  {% csrf_token %}
+
+                  <label for="name" class="text-white m-3">Name</label>
+                  <input type="text" id='name' class="btn btn-light" name="name"><br>
+                  
+                  <label for="contact" class="text-white m-3 "><i class="fas fa-phone-alt"></i></label>
+                  <input type="number" id='contact' class="btn btn-light" name="contact"><br>
+                
+                  <label for="date_check" class="text-white m-3">Date</label>
+                  <input type="date" id="date-check" class="btn btn-light" name="date"><br>
+                  <input type="submit" class="mt-2 btn btn-light">
+           
+
+
+                </form>
+                <div class="mt-5">
+                  {% if request.method == 'POST' %}
+
+                  {% if booking_exist %}
+                  <h3 class="mt-3 text-warning">The date is not Available. Please Search for another date</h3>
+                  {% else %}
+                  <h3 class="mt-3">The date is Available. Book your date as soon as possible</h3>
+                  {% endif %}
+                  {% endif %}
+                </div>
+                
+                
+              </div>
+              </div>
+            <!-- <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div>
+          <iframe style="border:0; width:100%; height:270px;" src="{% static 'assets/img/map2.png' %}"
+            frameborder="0" allowfullscreen></iframe> 
+        </div>
+      
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <a href="https://www.google.com/maps/place/Crystal+Plaza/@10.9395435,75.981527,15.75z/data=!4m5!3m4!1s0x0:0xeffbe7270df3ea21!8m2!3d10.9399791!4d75.9827274">
+
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Near Melangadi Juma Masjid <br>Kalpakancherry PO <br> Melandadi <br> Malappuram District <br> Kerala, India</p>
+              </a> 
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>crystalplazamelangadi@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 9961223331</p>
+                <p>+91 8891223331</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="{% url 'home:sentmessage' %}" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                    data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="footer-info">
+              <h2>Developed By</h2>
+              <h4>Mohammed Sahir Anas<span></span></h4>
+              <p>
+                 
+                Puthanathani <br>Malappuram District <br>Kerala, India <br>PIN: 676552
+                <strong>Phone:</strong> +91 9020952083<br>
+                <strong>Email:</strong> sahiranas23@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+               
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+         
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6 col-md-6 footer-links">
+            <h4>My Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <p href="#">Web Design</p></li>
+              <li><i class="bx bx-chevron-right"></i> <p href="#">Web Development</p></li>
+              <li><i class="bx bx-chevron-right"></i> <p href="#">Data Analysis</p></li>
+              <li><i class="bx bx-chevron-right"></i> <p href="#">Marketing</p></li>
+              
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="https://kit.fontawesome.com/1a0363fe8f.js" crossorigin="anonymous"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

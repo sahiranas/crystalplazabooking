@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+         
+              <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">Booking Informations: jasim@unq.ai</h1>
+
+              <div id="personal">
+              <p class="leading-relaxed mb-4"><b> Booked by :</b> {{report.event_date.name}} <br><b> Address :</b>  {{report.event_date.house_name}}, {{report.event_date.post}} PO,
+                {{report.event_date.location}} <br> <b>Booked on:</b>  {{report.event_date.booking_date.date}} <br><br><b>{{report.event_date.event_type}} of {{report.event_date.bride_or_groom_name}}</b>
+            
+            
+            </p>
+            <div class="flex border-t border-gray-200 py-2">
+              <span class="text-gray-500">Report Submitted On </span>
+              <span class="ml-auto text-gray-900">{{report.report_submition_date}}</span>
+            </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Contact No 1 </span>
+                <span class="ml-auto text-gray-900">{{report.event_date.contact1}}</span>
+              </div>
+              <div class="flex border-t border-gray-200 py-2">
+                <span class="text-gray-500">Contact No 2</span>
+                <span class="ml-auto text-gray-900">{{report.event_date.contact1}}</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Event Date</span>
+                <span class="ml-auto text-gray-900">{{report.event_date.event_date}}</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Advance</span>
+                <span class="ml-auto text-gray-900">{{report.event_date.advance}}</span>
+              </div>   
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Rent</span>
+                <span class="ml-auto text-gray-900">{{report.event_date.total_amount}}</span>
+              </div>  
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Total Income</span>
+                <span class="ml-auto text-gray-900">{{report.total_income}}</span>
+              </div>  
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Total Expenditure</span>
+                <span class="ml-auto text-gray-900">{{report.total_expenditure}}</span>
+              </div>  
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500"><b>Balance</b> </span>
+                <span class="ml-auto text-gray-900">{{report.balance}}</span>
+              </div>  
+              
+              
+            </div>
+   
+
+
+       
+            </div>
+         
+          </div>
+          
+        </div>
+      </section>
+      <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Income & Expenditure</h1>
+
+          </div>
+          <div class="flex flex-wrap -m-4">
+
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden">
+                <span
+                  class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Income</span>
+            
+                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                  <span>{{report.total_income}}</span>
+                  <span class="text-lg ml-1 font-normal text-gray-500"><span>&#8377;</span></span>
+                </h1>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Advance </span>
+                  <span class="ml-auto text-gray-900">{{report.event_date.advance}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Balance Rent </span>
+                  <span class="ml-auto text-gray-900">{{report.event_date.balance}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Stage Decoration </span>
+                  <span class="ml-auto text-gray-900">{{report.stage_decoration}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Juice Counter </span>
+                  <span class="ml-auto text-gray-900">{{report.juice_counter}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Pop-Corn Machine </span>
+                  <span class="ml-auto text-gray-900">{{report.pop_corn_machine}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Sound System </span>
+                  <span class="ml-auto text-gray-900">{{report.sound_system}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Income </span>
+                  <span class="ml-auto text-gray-900">{{report.other_income_1}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Income </span>
+                  <span class="ml-auto text-gray-900">{{report.other_income_2}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Income </span>
+                  <span class="ml-auto text-gray-900">{{report.other_income_3}}</span>
+                </div>
+                </p>
+            
+            
+                <button
+                  class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden">
+                <span
+                  class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Income</span>
+            
+                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                  <span>{{report.total_expenditure}}</span>
+                  <span class="text-lg ml-1 font-normal text-gray-500"><span>&#8377;</span></span>
+                </h1>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Cleaning Charge </span>
+                  <span class="ml-auto text-gray-900">{{report.cleaning_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Utensils Cleaning Charge </span>
+                  <span class="ml-auto text-gray-900">{{report.utensils_cleaning_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Parking Charge </span>
+                  <span class="ml-auto text-gray-900">{{report.parking_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Waste Disposal Charge </span>
+                  <span class="ml-auto text-gray-900">{{report.waste_disposal_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Transporation Charge </span>
+                  <span class="ml-auto text-gray-900">{{report.trasportaion_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Detergents </span>
+                  <span class="ml-auto text-gray-900">{{report.detergents}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Maintanance </span>
+                  <span class="ml-auto text-gray-900">{{report.maintanance}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Purchase </span>
+                  <span class="ml-auto text-gray-900">{{report.purchace_of_stock}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Generator Fuel </span>
+                  <span class="ml-auto text-gray-900">{{report.generator_fule}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Electricity Bill </span>
+                  <span class="ml-auto text-gray-900">{{report.electricity_bill}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Water - Bill </span>
+                  <span class="ml-auto text-gray-900">{{report.water_charge}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Expenditure </span>
+                  <span class="ml-auto text-gray-900">{{report.other_expenditure_1}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Expenditure</span>
+                  <span class="ml-auto text-gray-900">{{report.other_expenditure_2}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Expenditure</span>
+                  <span class="ml-auto text-gray-900">{{report.other_expenditure_3}}</span>
+                </div>
+                </p>
+                <p class="flex items-center text-gray-600 mb-2"></p>
+                <div class="flex border-t border-gray-200 py-2">
+                  <span class="text-gray-500">Other Expenditure </span>
+                  <span class="ml-auto text-gray-900">{{report.other_expenditure_4}}</span>
+                </div>
+                </p>
+            
+            
+            
+            
+                <button
+                  class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+      </section>
+     
+jasim@unq.ai
+        
+
+      </div>
+</body>
+</html>

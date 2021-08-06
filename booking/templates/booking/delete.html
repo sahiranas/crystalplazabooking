@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "booking/base.html" %}
+    {% block contain %}
+    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+        <strong>Are You sure to Delete !!!!</strong> MR.{{record.name}} booked {{record.event_type}} for {{record.event_date}}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="Submit" class= "btn btn-danger mt-3" value="Yes, Confirm Delete">
+        </form>
+        <a href="/booking/list/{{record.id}}"><button class="btn btn-success mt-3">Cancel</button></a>
+      
+      </div>
+    
+
+          
+    {% endblock contain %}
+</body>
+</html>

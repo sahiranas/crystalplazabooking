@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "booking/base.html" %}
+    {% block contain %}
+    <div class="container">
+
+ <h3 class="text-center mb-4">   All Bookings</h3>
+ <div class="text-right mb-5">
+      <a href="{% url 'booking:listing_page' %}"><button class="text-center btn btn-primary">Book A Function</button></a>
+</div>
+
+  
+{% for month in months %}
+      <table class="table table-bordered table-striped table-dark">
+              <thead>
+            <th scope="col">{{month.name}}</th>
+              
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Date of Event</th>
+            <th scope="col">Name of Booked Person</th>
+            <th scope="col">Advance</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+            {% for each_booking in record %}
+              {% if each_booking.event_date.month == month.number and each_booking.is_completed == False %}
+              
+          <tr>
+
+            <th scope="row">{{each_booking.id}}</th> 
+            <td>{{each_booking.event_date}}</td>
+            <td>{{each_booking.name}}, {{each_booking.location}} </td>
+            <td>{{each_booking.advance}}</td>
+            <td><a href="{% url 'booking:detail_view' each_booking.id %}"><button class="btn btn-light">Details</button></a></td>
+          </tr>
+        
+                
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    
+
+      {% endfor %}
+      
+</div>
+    {% endblock contain %}
+    
+    
+</body>
+</html>

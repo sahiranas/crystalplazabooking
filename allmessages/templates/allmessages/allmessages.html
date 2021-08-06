@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Crystal Plaza</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="/#testimonials">Check Date Availability</a>
+            <a class="mr-5 hover:text-gray-900" href="/booking">Make a Booking</a>
+            <a class="mr-5 hover:text-gray-900" href="/booking/list/">All Bookings</a>
+          </nav>
+          
+          
+     
+        </div>
+      </header>
+      
+      <section class="text-gray-600 body-font overflow-hidden">
+       
+        <div class="container px-5 py-24 mx-auto">
+          
+          <div class="-my-8 divide-y-2 divide-gray-100">
+{% for each_message  in messages  %}
+  
+
+
+            <div class="py-8 flex flex-wrap md:flex-nowrap">
+              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                <span class="font-semibold title-font text-gray-700">{{each_message.name}}</span>
+                <span class="mt-1 text-gray-500 text-sm">{{each_message.date}}</span>
+              </div>
+              <div class="md:flex-grow">
+                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{each_message.subject}}</h2>
+                <p class="leading-relaxed">{{each_message.message}}</p>
+                <a class="text-indigo-500 inline-flex items-center mt-4">{{each_message.email}}
+                  
+
+                </a>
+              </div>
+            </div>
+
+
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+</body>
+</html>

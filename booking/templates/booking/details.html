@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "booking/base.html" %}
+    {% block contain %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+          <a href="{% url 'booking:listing_page' %}"><button class="btn btn-light">All Bookings</button></a></div>
+    <div class="card border-dark mb-3 mx-auto mt-5" style="max-width: fit-content;">
+
+
+        <div class="card-header text-center">{{record.event_type}}</div>
+        <div class="card-body text-dark bg-light">
+          <h5 class="card-title ">Date: <b>{{record.event_date}}</b></h5>
+          <h5 class="card-title">Name of Booked Person: {{record.name}}</h5>
+          <h5 class="card-title">Address: {{record.house_name}}, <br> {{record.post}} PO,{{record.location}} </h5>
+          <h5 class="card-title">Contact Number 1: <a href="+91{{record.contact1}}" style="text-decoration: none;">+91{{record.contact1}}</a> </h5>
+          <h5 class="card-title">Contact Number 2: <a href="+91{{record.contact1}}" style="text-decoration: none;">+91{{record.contact2}}</a></h5>
+          <h5 class="card-title">Name of Bride/Groom: {{record.bride_or_groom_name}}</h5>
+          <h5 class="card-title">Booking Date: {{record.booking_date}}</h5>
+          <h5 class="card-title">Recent Update: {{record.last_modified}}</h5>
+          <h5 class="card-title">Advance Paid: {{record.advance}}</h5>
+          <h5 class="card-title">Balance Amount: {{record.balance}}</h5>
+          <h5 class="card-title">Total Amount: {{record.total_amount}}</h5>
+               
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="{% url 'booking:update' record.id %}"><button class="btn btn-light">Update</button></a>
+        <a href="{% url 'booking:delete' record.id %}"><button class="btn btn-light">Delete</button></a>
+        <br>
+        <a href="/ledger/newreport/{{record.id}}/"><button class="btn btn-light mt-5">Event Completed</button></a>
+        <br>
+     
+    </div>
+    
+
+
+     
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+    {% endblock contain %}
+
+
+</body>
+
+</html>
