@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    Log in
+    {% extends "booking/base.html" %}
+    {% block contain %}
 
-    <form method="POST">
+<div class="container">
+    <div class="mt-5">
+
+       
+    <form method="POST" class="text-center my-auto">
         {% csrf_token %}
+        <h5 class="pb-5">Login</h5>
         {{form.as_p}}
         <input type="submit">
     </form>
+</div>
+</div>
+    {% endblock contain %}
 </body>
 </html>
