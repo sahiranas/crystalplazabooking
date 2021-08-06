@@ -3,5 +3,6 @@ from .models import *
 
 
 admin.site.register(Owners)
-admin.site.register(User)
+
 admin.site.register(Manager)
+admin.site.register(User)

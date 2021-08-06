@@ -9,7 +9,7 @@ class BookingData(models.Model):
                    ('Meeting','Meeting'),
                    ('Reception(Evening)','Reception(Evening)'))
 
-
+    # manager_name=models.CharField(max_length=50,null=True,blank=True,default='Mr.')
     event_date=models.DateField(null=False,blank=False,unique=True)
     name=models.CharField(max_length=255)
     event_type=models.CharField(choices=event_choices,max_length=255)

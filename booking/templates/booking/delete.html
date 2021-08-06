@@ -4,22 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Delete a Booking</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 <body>
     {% extends "booking/base.html" %}
     {% block contain %}
+
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Crystal Plaza</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        
+            <a class="mr-5 hover:text-gray-900" href="{% url 'ledger:allreports' %}">Reports</a>
+            
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:dashboard' %}">Dashboard</a>
+  
+            {% if user.is_authenticated %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:logout' %}">Logout</a>
+            {% else %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:login' %}">Login</a>
+            {% endif %}
+          </nav >
+          
+          
+     
+        </div>
+      </header>
+  
+  {% if user.is_authenticated %}
     <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
         <strong>Are You sure to Delete !!!!</strong> MR.{{record.name}} booked {{record.event_type}} for {{record.event_date}}
         <form action="" method="POST">
             {% csrf_token %}
             <input type="Submit" class= "btn btn-danger mt-3" value="Yes, Confirm Delete">
         </form>
-        <a href="/booking/list/{{record.id}}"><button class="btn btn-success mt-3">Cancel</button></a>
+        <a href="{% url 'booking:detail_view' record.id %}"><button class="btn btn-success mt-3">Cancel</button></a>
       
       </div>
     
-
+{% endif %}
           
     {% endblock contain %}
 </body>

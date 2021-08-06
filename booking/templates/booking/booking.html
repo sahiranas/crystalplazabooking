@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booking Page</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +14,35 @@
     {% extends "booking/base.html" %}
     {% block contain %}
 
-    {% if user.is_authenticated %}
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Crystal Plaza</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="{% url 'ledger:allreports' %}">Reports</a>
+            
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:dashboard' %}">Dashboard</a>
+            <a class="mr-5 hover:text-gray-900" href="{% url 'booking:listing_page' %}">All Bookings</a>
+            {% if user.is_authenticated %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:logout' %}">Logout</a>
+            {% else %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:login' %}">Login</a>
+            {% endif %}
+          </nav>
+          
+          
+     
+        </div>
+      </header>
+
+  {% if user.is_authenticated %}
+    
+  
     <div class="container mt-4">
         <div class="row">
             <div class="col-12">
@@ -21,7 +50,7 @@
                 
                 <div class="text-center pb-4">
                 <h2>Booking</h2>
-                <a href="/booking/list/">View all Bookings</a>
+                <a href="{% url 'booking:listing_page' %}">View all Bookings</a>
                 </div>
                 <div align="center">
                 <form action="" method="POST">
@@ -29,20 +58,21 @@
                     {{form.as_p}}
                     <input type="submit">
                 </form>
-                </div>
-
-               
-               
+                </div>   
             </div>
             </div>
         </div>
-    </div>      
-   
+    </div>  
+    
     {% else %}
 
+    Not Authorised user
+    
+   
 
-    hi login please
     {% endif %}
+
+
     {% endblock contain %} 
 </body>
 </html>

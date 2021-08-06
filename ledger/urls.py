@@ -5,6 +5,6 @@ from ledger import views
 urlpatterns = [
     path("",views.allreports,name='allreports'),
     path("<int:pk>/",views.detailreport,name='detailreport'),
-    path("newreport/<int:pk>/",views.newreport)
+    path("newreport/<int:pk>/",views.newreport,name="newreport")
 
-]
+] 

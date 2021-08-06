@@ -8,7 +8,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-
+  {% extends "booking/base.html" %}
+  {% block contain %}
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -18,10 +19,16 @@
             <span class="ml-3 text-xl">Crystal Plaza</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+         
             <a class="mr-5 hover:text-gray-900" href="/#testimonials">Check Date Availability</a>
-            <a class="mr-5 hover:text-gray-900" href="/booking">Make a Booking</a>
-            <a class="mr-5 hover:text-gray-900" href="/booking/list/">All Bookings</a>
+            <a class="mr-5 hover:text-gray-900" href="{% url 'booking:booking_page' %}">Make a Booking</a>
+            <a class="mr-5 hover:text-gray-900" href="{% url 'booking:listing_page' %}">All Bookings</a>
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:dashboard' %}">Dashboard</a>
+            {% if user.is_authenticated %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:logout' %}">Logout</a>
+            {% else %}
+            <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:login' %}">Login</a>
+            {% endif %}
           </nav>
           
           
@@ -29,7 +36,7 @@
         </div>
       </header>
   
-
+      {% if user.is_authenticated %}
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
@@ -42,26 +49,13 @@
               <input type="submit" class="mt-3" value="Search">
              </form> 
           </div> 
-          {% if request.method == 'POST'  %}
-
- 
-          
-            
-        
-          
-            
-              
+          {% if request.method == 'POST'  %}     
         <div class="lg:w-2/3 w-full mx-auto overflow-auto">
             <table class="table-auto w-full text-left whitespace-no-wrap">
-              <h1><b>Search Result:         
-                
-                
+              <h1><b>Search Result:                        
                 {% if found == False %}
                 <h1>Enter a Valid Date</h1>
-      
                 {% else %}
-
-
               </b>  </h1>
               <thead>
                 <tr>
@@ -72,29 +66,25 @@
                   <th class="w-10 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br"></th>
                 </tr>
               </thead>
-              <tbody>
-     
-               
+              <tbody>                    
                 <tr>
                   <td class="px-4 py-3">{{searchdatefield.event_date.id}}</td>
                   <td class="px-4 py-3">{{searchdatefield.event_date.name}}</td>
                   <td class="px-4 py-3">{{searchdatefield.event_date.location}}</td>
                   <td class="px-4 py-3 text-lg text-gray-900">{{searchdatefield.event_date.event_date}}</td>
                   <td class="w-10 text-center">
-                   <a href="/ledger/{{searchdatefield.id}}/"><button>Details</button></a> 
+                   <a href="{% url 'ledger:detailreport' searchdatefield.id %}"><button>Details</button></a> 
                   </td>
-                </tr>
-               
-
+                </tr>               
               </tbody>
             </table>
           </div>
           {% endif %}
           {% endif %}  
-
         </div>
-      </section>
-      
+      </section>      
+
+      {% if request.user.is_superuser  %}
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
@@ -112,27 +102,25 @@
                 </tr>
               </thead>
               <tbody>
-
-                {% for each_report in allreports %}
-                  
-               
+                {% for each_report in allreports %}                                 
                 <tr>
                   <td class="px-4 py-3">{{each_report.event_date.id}}</td>
                   <td class="px-4 py-3">{{each_report.event_date.name}}</td>
                   <td class="px-4 py-3">{{each_report.event_date.location}}</td>
                   <td class="px-4 py-3 text-lg text-gray-900">{{each_report.event_date.event_date}}</td>
                   <td class="w-10 text-center">
-                   <a href="/ledger/{{each_report.id}}/"><button>Details</button></a> 
+                   <a href="{% url 'ledger:detailreport' each_report.id %}"><button>Details</button></a> 
                   </td>
                 </tr>
                 {% endfor %}
-
               </tbody>
             </table>
           </div>
-
         </div>
-      </section>
-      
+      </section>  
+
+      {% endif %}   
+      {% endif %}   
+      {% endblock contain %} 
 </body>
 </html>

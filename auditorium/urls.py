@@ -30,7 +30,7 @@ urlpatterns = [
     path('allmessages/',include(('allmessages.urls','allmessages'),namespace='allmessages')),
     path('allsearches/',include(('allsearches.urls','allsearches'),namespace='allsearches')),
     path("user/",include(('userdata.urls','userdata'),namespace='userdata')),
-  
+   
 
       
 

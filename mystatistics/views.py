@@ -22,25 +22,10 @@ def monthnameset():
             eachobject.month_name='January'
 
 
-    
 
 
-
-
-
-
-
-
-
-
-
-
-
-def statisticshome(request):
-    
-  
+def statisticshome(request): 
     #calculating total statistics
-
     total_events=0
     total_income=0
     total_expenditure=0
@@ -49,22 +34,16 @@ def statisticshome(request):
         total_events+=1
         total_income+=each_report.total_income
         total_expenditure+=each_report.total_expenditure
-        profit_gross+=each_report.balance
-    
-   
-    
+        profit_gross+=each_report.balance         
     object=None
     year=''
     years=allyear()
     years=list(set(years)) #removing duplicates
     month_list=[] 
-
     if request.method == 'POST':              
         year=request.POST['year']
         yearobject=Years.objects.get(year=year)
-        object=YearlyReport.objects.filter(year=yearobject)
-
-       
+        object=YearlyReport.objects.filter(year=yearobject)       
     context={
         'total_events':total_events,
         'total_income':total_income,
@@ -73,16 +52,7 @@ def statisticshome(request):
         'years':years,
         'year':year,
         'object':object,
-       
-
-
     }
-
-        
-
-
-    
-    
     return render(request,'mystatistics/statistics.html',context)
 
 

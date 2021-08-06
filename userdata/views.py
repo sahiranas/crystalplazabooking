@@ -1,6 +1,8 @@
 from django.core.checks import messages
 from django.shortcuts import redirect, render
 from .models import *
+from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def userregistration(request):
 
@@ -25,9 +27,10 @@ def userregistration(request):
 
 
 
+
 def dashboard(request):
     return render(request,'userdata/dashboard.html')
 
 
 
-   ##program to add two numbers
+

@@ -12,7 +12,7 @@ def allreports(request):
     if request.method=='POST':
 
 
-#fetching the date given by user for searching
+       #fetching the date given by user for searching
         searchdate=request.POST.get('searchdate')
         
         all_dates=[]
@@ -124,19 +124,23 @@ def newreport(request,pk):
             total_expenditure=total_expenditure,
             balance=balance
             )
+
+            #set this variable to true so that it wont be showing in all booking list
             object.is_completed=True
             object.save()
+
+            #getting the year and montha of report
             yearofreport=str(object.event_date.year)
             monthofreport=object.event_date.month
             
-
+            #getting all the years in the Years table which contain all  years after the report submission
             years=allyear()
             years=list(set(years))
             Yearyears=[]
             for each in Years.objects.all():
                 year=each.year
                 Yearyears.append(year)
-
+            #checking wheter that if there is any year not presnt in YEars Model are present in year field in stattisctics if not create 12 month field corresponding to the year in YearlyReport field and the year in yealr modle
             for each_year in years:
                 if (str(each_year) in str(Yearyears)):
                     continue
@@ -159,7 +163,7 @@ def newreport(request,pk):
 
                         YearlyReport.objects.create(year=yearobject,month=i,month_name=month[i])                  
             yearofreportobject=Years.objects.get(year=yearofreport)
-
+            #suuming the monthly staticstics in yearly report
             for each in YearlyReport.objects.filter(year=yearofreportobject):
                 if each.month==monthofreport: 
                     each.total_income+=total_income

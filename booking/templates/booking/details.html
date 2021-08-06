@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Deatils of Booking</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body> 
     {% extends "booking/base.html" %}
     {% block contain %}
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Crystal Plaza</span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+     
+          <a class="mr-5 hover:text-gray-900" href="{% url 'ledger:allreports' %}">Reports</a>
+          
+          <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:dashboard' %}">Dashboard</a>
+
+          {% if user.is_authenticated %}
+          <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:logout' %}">Logout</a>
+          {% else %}
+          <a class="mr-5 hover:text-gray-900" href="{% url 'userdata:login' %}">Login</a>
+          {% endif %}
+        </nav >
+        
+        
+   
+      </div>
+    </header>
+
+{% if user.is_authenticated %}
 
     <div class="container">
       <div class="row">
@@ -35,10 +63,15 @@
         </div>
       </div>
       <div class="text-center">
+
+        {% if request.user.is_superuser  %}
+          
+  
         <a href="{% url 'booking:update' record.id %}"><button class="btn btn-light">Update</button></a>
         <a href="{% url 'booking:delete' record.id %}"><button class="btn btn-light">Delete</button></a>
+        {% endif %}
         <br>
-        <a href="/ledger/newreport/{{record.id}}/"><button class="btn btn-light mt-5">Event Completed</button></a>
+        <a href="{% url 'ledger:newreport' record.id %}"><button class="btn btn-light mt-5">Event Completed</button></a>
         <br>
      
     </div>
@@ -52,7 +85,7 @@
 </div>
 
     
-
+{% endif %}
 
     {% endblock contain %}
 

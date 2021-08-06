@@ -8,28 +8,25 @@ from .forms import *
 from .models import *
 import datetime
 from django.views import generic
+from django.views.generic.edit import CreateView
 
 
 # Create your views here.
 
 def booking_page(request):
-    
-
     form=BookingForm()
     if request.method=='POST':
         form=BookingForm(request.POST)
         if form.is_valid(): 
-            form.save()
-
-            
-            
+            form.save()     
         return redirect('/booking/list/') 
-
     context={
-        'form':form,
-        
-    }
+        'form':form,        
+            }
     return render (request,'booking/booking.html',context)
+
+
+
 
 
 def listing_page(request):
@@ -77,7 +74,7 @@ def delete(request,pk):
     if request.method=='POST':
 
         record.delete()
-        return redirect('/booking/list')
+        return redirect('/booking/list/')
 
     context={
         'record':record
