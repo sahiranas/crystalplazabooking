@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from home.models import *
 from booking.models import BookingData
 
-# Create your views here.
+
 
 def homepage(request):
 
