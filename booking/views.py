@@ -31,7 +31,28 @@ def booking_page(request):
 
 def listing_page(request):
     record=BookingData.objects.all()
+   
+    month = {	1:'January',
+        2:'February',
+        3:'March',
+        4:'April',
+        5:'May',
+        6:'June',
+        7:'July',
+        8:'August',
+        9:'September',
+        10:'October',
+        11:'November',
+        12:'December'		}
+
+# creating month model objects
+    for i in range(1,13):            
+        if Month.objects.filter(number=i).exists()==False:
+            Month.objects.create(number=i,name=month[i])
+
+        
     months=Month.objects.all()
+
 
     context={
         'record':record,

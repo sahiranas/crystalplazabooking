@@ -38,6 +38,10 @@
 
   {% if user.is_authenticated  %}
 
+  {% if request.user.is_superuser %}
+    
+
+
 <div class="body-content">
   <div class="module">
     <h1>Create an account</h1>
@@ -55,6 +59,7 @@
     </form>
   </div>
 </div>
+{% endif %}
 {% endif %}
     
 </body>

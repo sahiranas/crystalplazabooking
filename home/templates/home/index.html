@@ -62,18 +62,19 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Crystal Plaza</a></h1>
+      <h1 class="logo"><a href="/">Crystal Plaza</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="/">Home</a></li>
+          <li class="active"><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="{% url 'userdata:login' %}">Login</a></li>
+          <li><a href="#features">Services</a></li>
+         
           <li><a href="#testimonials">Check Date Availability</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="{% url 'userdata:login' %}">Login</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -98,32 +99,33 @@
         <div class="col-xl-2 col-md-4 col-6">
           <div class="icon-box">
             <i class="material-icons" style="font-size:36px">location_city</i>
-            <h3><a href="">About</a></h3>
+            <h3><a href="#about">About</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 ">
+          
           <div class="icon-box">
             <i class="material-icons" style="font-size:36px">contact_phone</i>
-            <h3><a href="">Contact Us</a></h3>
+            <h3><a href="#contact">Contact Us</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Services</a></h3>
+            <h3><a href="#features">Services</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
           <div class="icon-box">
             <i class="material-icons" style="font-size:36px">description</i>
-            <h3><a href="">Features</a></h3>
+            <h3><a href="#services">Features</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
 
-            <h3><a href="">Check Availability</a></h3>
+            <h3><a href="#testimonials">Check Availability</a></h3>
           </div>
         </div>
       </div>
@@ -208,13 +210,44 @@
             data-aos="fade-right"></div>
 
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-            {% for service in services %}
+           
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="fas fa-angle-double-right"></i>
-              <h4>{{service.title}}</h4>
+              <h4>Marraige</h4>
               <br>
             </div>
-            {% endfor %}
+
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Nikkah</h4>
+              <br>
+            </div>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Engagement</h4>
+              <br>
+            </div>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Reception</h4>
+              <br>
+            </div>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Meetings</h4>
+              <br>
+            </div>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Get-together</h4>
+              <br>
+            </div>
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="fas fa-angle-double-right"></i>
+              <h4>Mehandi Nights</h4>
+              <br>
+            </div>
+           
           </div>
         </div>
 
@@ -226,23 +259,122 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
+          <h2>Features</h2>
           <p>Check our Features</p>
         </div>
 
         <div class="row">
 
-          {% for feature in features %}
+
 
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="{{feature.icon_class}}"></i></div>
-              <h4><a href="">{{feature.title}}</a></h4>
-              <p>{{feature.description}}</p>
+              <div class="icon"><i class="fas fa-fan"></i></div>
+              <h4>Central A/C System</h4>
+              <p>The Costomers can opt AC or Non AC Services, and can make use of the AC services for small durations</p>
             </div>
           </div>
-          {% endfor %}
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-chair"></i></div>
+              <h4>Luxury Suite Rooms</h4>
+              <p>Well furnished Suit Rooms are Available alongside of the Stage</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-couch"></i></div>
+              <h4>High Standard Seating Arrangements</h4>
+              <p>All the Seats in the Hall are provided with Kusyen.</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-bolt"></i></div>
+              <h4>24hr Power Supply & Backup Stystem</h4>
+              <p>In case of Power Failure an additional Generator is available within the compound</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-recycle"></i></div>
+              <h4>Advanced Waste Management Sysytem</h4>
+              <p>A Well Performing Waste Management setup is used to Treat all Waste Products</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-video"></i></div>
+              <h4>Fully CCTV Coverage & Backup System</h4>
+              <p>The Whole Auditorium Compound in fully under CCTV Survilance</p>
+            </div>
+          </div>
+          
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-people-arrows"></i></div>
+              <h4>Affluence Spaces</h4>
+              <p>A Total of 800 Seating Capacity and more than  one acre of parking space </p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-utensils"></i></div>
+              <h4>Hygienic Modern Kitchen</h4>
+              <p>Kitchen is Eqiped with all Necesarry Utensiles, Fresh Water Supply.. and Plenty of Space</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-mosque"></i></div>
+              <h4>Prayer Rooms</h4>
+              <p>An Additional Facility of Prayer Room for Ladies is Available</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-lock"></i></div>
+              <h4> Safe Locker Facility</h4>
+              <p>Locker Facility to  Keep the Costomers Valuable Things</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+              <h4> Prime Location</h4>
+              <p>100mtr away from Melangadi Bus Stop, 9 km away from Tirur Railway Station, 25km away from Calicut International Airport</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-baby"></i></div>
+              <h4> Baby's feeding Room</h4>
+              <p>An Additional Facility of Baby Feeding Room is Available alongside of the Stage</p>
+            </div>
+          </div>
+
+
+
+          
+  
         </div>
 
       </div>

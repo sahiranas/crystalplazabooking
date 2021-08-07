@@ -41,6 +41,8 @@
 
 
   {% if user.is_authenticated %}
+
+  {% if request.user.is_superuser %}
   <!-- Staistics of all Reports in all year  -->
   <section class="text-gray-600 body-font">
   
@@ -154,7 +156,7 @@
       </div>
     </section>
 
-
+    {% endif %}
     {% endif %}
 
     {% endblock contain %} 
