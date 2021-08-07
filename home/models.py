@@ -1,21 +1,6 @@
 from django.db import models
 
-# Create your models here.
-class Service(models.Model):
-    title=models.CharField(max_length=100)
-    
 
-    def __str__(self):
-        return (self.title)
-
-
-class Features(models.Model):
-    title=models.CharField(max_length=255)
-    description=models.CharField(max_length=255)
-    icon_class=models.CharField(max_length=255)
-    
-    def __str__(self):
-        return (self.title)
 
 class Portfolio(models.Model):
     img=models.ImageField(upload_to='imgs/')

@@ -17,7 +17,8 @@
        
     <form method="POST" class="text-center my-auto">
         {% csrf_token %}
-        <h5 class="pb-5">Login</h5>
+        <a style="text-decoration: none;" href="/"><h3  class= ' text-info' >Home</h3></a>
+        <h5 class="pb-5 pt-5">Login</h5>
         {{form.as_p}}
         <input type="submit">
     </form>

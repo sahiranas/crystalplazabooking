@@ -6,8 +6,7 @@ from booking.models import BookingData
 # Create your views here.
 
 def homepage(request):
-    services=Service.objects.all()
-    features=Features.objects.all()
+
     img=Portfolio.objects.all()
     booking_exist=False
     if request.method=='POST':
@@ -31,8 +30,7 @@ def homepage(request):
             temp.save()
 
     context={
-        'services':services,
-        "features":features,
+ 
         'img':img,
         'booking_exist':booking_exist
     }  
